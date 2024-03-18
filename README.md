@@ -1,2 +1,4 @@
-# list
-This repository contains the starter files for the List project
+# List
+
+## Objective
+Work with event listeners. 
