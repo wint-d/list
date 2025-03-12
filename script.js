@@ -32,3 +32,28 @@ const colors = [
 
 buildList(colors)
 
+$add.addEventListener('click', function () {
+  $dialog.showModal() // Open-up the model
+})
+
+$addForm.addEventListener('submit', function (e) {
+  e.preventDefault()
+  
+  colors.push($color.value)
+  buildList(colors)
+  // $color.value = ''
+  $addForm.reset() // clear form
+  $dialog.close() // close the dialog box once enter or press esc key
+})
+
+$searchForm.addEventListener('submit', function (e) {
+  e.preventDefault()
+})
+
+$search.addEventListener('input', function (e) {
+  e.preventDefault()
+  const filtered = colors.filter( color => 
+    color.includes($search.value)
+  )
+  buildList(filtered)
+})
